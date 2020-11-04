@@ -1,0 +1,31 @@
+<div class="jumbotron jumbotron-fluid animated fadeIn">
+  <div class="container">
+    <h1 class="display-4">{{ heroe.nombre | uppercase }}</h1>
+    <p class="lead">
+      From
+      <img
+        *ngIf="heroe.casa == 'DC'"
+        src="assets/img/dc-logo.png"
+        class="img-logo"
+        alt="dc"
+      />
+      <img
+        *ngIf="heroe.casa == 'Marvel'"
+        src="assets/img/marvel-logo.png"
+        class="img-logo"
+        alt="marvel"
+      />
+    </p>
+  </div>
+  <div class="card w-50 d-flex mx-auto">
+    <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre" />
+    <div class="card-body">
+      <p class="card-text">
+        (Aparecio en: {{ heroe.aparicion | date: "y" }}) -> {{ heroe.bio }}
+      </p>
+    </div>
+  </div>
+  <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block"
+    >Volver</a
+  >
+</div>

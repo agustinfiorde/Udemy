@@ -1,0 +1,167 @@
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Variable</th>
+          <th>Pipe</th>
+          <th>Salida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ nombre2 }}</td>
+          <td>nombreCapitalizado</td>
+          <td>{{ nombre2 | capitalizado: false }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>uppercase</td>
+          <td>{{ nombre | uppercase }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>lowercase</td>
+          <td>{{ nombre | lowercase }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>slice:3</td>
+          <td>{{ nombre | slice: 3 }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>slice:0:6</td>
+          <td>{{ nombre | slice: 0:6 }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ array }}</td>
+          <td>slice:1:4</td>
+          <td>{{ array | slice: 1:5 }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'3.0-0' 3: posiciones enteras</td>
+          <td>{{ PI | number: "3.0-0" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'.0-2' -2: dos decimales y todos los numeros enteros</td>
+          <td>{{ PI | number: ".0-2" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ porcentaje }}</td>
+          <td>
+            percent si es menor a 5 redondea abajo o lo siguiente percent:
+            "2.2-2"
+          </td>
+          <td>{{ porcentaje | percent: "2.2-2" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency</td>
+          <td>{{ salario | currency }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency:'CAD'</td>
+          <td>{{ salario | currency: "CAD ":"symbol-narrow":".0-0" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ valorPromesa }}</td>
+          <td>async</td>
+          <td>{{ valorPromesa | async }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date: medium</td>
+          <td>{{ fecha | date: "medium" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date: short</td>
+          <td>{{ fecha | date: "short" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date: personalizada</td>
+          <td>{{ fecha | date: "dd - MMMM - yyyy" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date: personalizada</td>
+          <td>{{ fecha | date: "dd - MMMM - yyyy":"":"en" }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>
+            date: personalizada {{ idioma }}
+            <button (click)="idioma = 'es'" class="mr-1 btn btn-primary">
+              Español
+            </button>
+            <button (click)="idioma = 'en'" class="mr-1 btn btn-secondary">
+              Ingles
+            </button>
+            <button (click)="idioma = 'fr'" class="mr-1 btn btn-success">
+              frances
+            </button>
+          </td>
+
+          <td>{{ fecha | date: "dd - MMMM - yyyy":"":idioma }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4>Slice:5:9 in *ngFor of {{ array.join(" - ").toString() }}</h4>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of array | slice: 5:9">
+    {{ item }}
+  </li>
+</ul>
+
+<h4>JSON</h4>
+<hr />
+<div class="row mb-5">
+  <div class="col">
+    <pre>
+      {{ heroe | json }}
+    </pre>
+  </div>
+</div>
+
+<h4>DomSeguro</h4>
+<hr />
+<div class="row mb-5">
+  <div class="col">
+    <iframe
+      width="560"
+      height="315"
+      [src]="videoURL | domseguro"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
