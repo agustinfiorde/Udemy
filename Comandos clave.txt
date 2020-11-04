@@ -1,0 +1,23 @@
+npm i -g @angular/cli
+ng --version
+ng new [name] --routing=false --style=scss
+ng add @angular/material
+ng add @angular/localize
+
+npm i bootstrap --save
+npm i jquery --save
+npm i popper.js --save
+
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+ng g c components/[name] --skipTests=true
+ng g p pipes/[name] --skipTests=true
+ng g s services/[name] --skipTests=true
