@@ -29,4 +29,5 @@ export class AppComponent {
   fecha: Date = new Date();
   idioma: string = 'fr';
   videoURL: string = 'https://www.youtube.com/embed/zd9daXQXLSE';
+  activar: boolean = true;
 }

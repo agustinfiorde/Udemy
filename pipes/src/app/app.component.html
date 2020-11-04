@@ -13,6 +13,18 @@
       </thead>
       <tbody>
         <tr>
+          <td>{{ nombre }}</td>
+          <td>
+            constraeña : {{ activar }}
+            <br />
+            <button (click)="activar = !activar" class="btn btn-primary">
+              Activar/Desactivar
+            </button>
+          </td>
+          <td>{{ nombre | ocultar: activar }}</td>
+        </tr>
+
+        <tr>
           <td>{{ nombre2 }}</td>
           <td>nombreCapitalizado</td>
           <td>{{ nombre2 | capitalizado: false }}</td>

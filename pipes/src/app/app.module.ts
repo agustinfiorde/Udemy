@@ -11,9 +11,10 @@ registerLocaleData(localFr);
 import { AppComponent } from './app.component';
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { OcultarPipe } from './pipes/ocultar.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CapitalizadoPipe, DomseguroPipe],
+  declarations: [AppComponent, CapitalizadoPipe, DomseguroPipe, OcultarPipe],
   imports: [BrowserModule],
   providers: [
     {
